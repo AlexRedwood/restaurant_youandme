@@ -1,0 +1,19 @@
+{
+  "name": "restaurant_youandme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexRedwood/restaurant_youandme.git"
+  },
+  "author": "Alexandr Rudenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexRedwood/restaurant_youandme/issues"
+  },
+  "homepage": "https://github.com/AlexRedwood/restaurant_youandme#readme"
+}
