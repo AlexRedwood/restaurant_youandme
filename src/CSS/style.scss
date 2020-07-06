@@ -8,79 +8,85 @@ html {
 }
 
 body {
-  /*background-image: url("../assets/images/background/wool.png");*/
+  background-image: url("../assets/images/background/wool.png");
   width: 100%;
 }
 
 #frontpage {
   font-family: "Parisienne", cursive;
-  color: orange;
+  color: $logoColor;
   min-height: 400px;
   height: 100vh;
-}
-
-#logo {
-  display: block;
-  border: 5px orange solid;
-  border-radius: 50%;
-  background-color: black;
-  width: 300px;
-  height: 300px;
-  margin: auto;
   position: relative;
-  top: 20vh;
-}
 
-#navlinks > a {
-  color: white;
-  font-size: 1.6em;
-  display: block;
+  #logo {
+    display: block;
+    border: 5px $logoColor solid;
+    border-radius: 50%;
+    background-color: black;
+    width: 300px;
+    height: 300px;
+    margin: 0;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
 
-  font-family: "Georgia", cursive;
-  letter-spacing: 1px;
-  border: 2px white solid;
-  padding: 20px;
-  transition: 0.4s;
-  margin: auto;
-  border-radius: 5px;
-}
+  #navlinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 45%;
+    min-width: 470px;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 
-#navlinks > a:hover {
-  border-radius: 0;
-  text-decoration: none;
-  border: 2px orange solid;
-  color: orange;
-}
+    a {
+      color: white;
+      font-size: 1.6em;
+      display: block;
 
-#navlinks {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  width: 100%;
-  justify-content: center;
-  padding-top: 40vh;
-  width: 100%;
-}
+      font-family: "Georgia", cursive;
+      letter-spacing: 1px;
+      border: 2px white solid;
+      padding: 20px;
+      transition: 0.4s;
+      margin: auto;
+      border-radius: 5px;
+    }
+    a:hover {
+      border-radius: 0;
+      text-decoration: none;
+      border: 2px $logoColor solid;
+      color: $logoColor;
+    }
+  }
 
-#logo > p {
-  display: block;
-  position: relative;
-}
+  #logo > p {
+    display: block;
+    position: relative;
+  }
 
-#you {
-  left: 63px;
-  top: 26px;
-  font-size: 6em;
-}
-#and {
-  left: 134px;
-  top: 12px;
-  font-size: 5em;
-}
-#me {
-  left: 85px;
-  top: 10px;
-  font-size: 6em;
+  #you {
+    left: 63px;
+    top: 26px;
+    font-size: 6em;
+  }
+  #and {
+    left: 121px;
+    top: 8px;
+    font-size: 5em;
+  }
+  #me {
+    left: 75px;
+
+    font-size: 6em;
+  }
 }
 
 .section {
@@ -94,37 +100,37 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 100%;
+
+  #menu-photos {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 40px;
+    max-width: 100%;
+  }
+
+  .menus {
+    max-height: 40vh;
+    width: auto;
+    height: auto;
+    margin: 20px;
+  }
 }
 
 .titles {
   display: block;
   font-size: 4em;
   margin: auto;
-  color: orange;
+  color: $logoColor;
   font-family: "Parisienne", cursive;
   text-align: center;
   max-width: 100%;
   padding-top: 20px;
 }
 
-#menu-photos {
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  padding: 40px;
-  max-width: 100%;
-}
-
-.menus {
-  max-height: 40vh;
-  width: auto;
-  height: auto;
-  margin: 20px;
-}
-
 .texts {
-  color: white;
+  color: $textcolor;
   font-size: 1.6em;
   display: block;
   margin: auto;
@@ -140,7 +146,7 @@ body {
 }
 
 a:link {
-  color: orange;
+  color: $logoColor;
   text-decoration: none;
 }
 
@@ -148,7 +154,7 @@ a:hover {
   text-decoration: underline;
 }
 a:active {
-  color: yellow;
+  color: $activeLinkColor;
 }
 
 #gallery {
