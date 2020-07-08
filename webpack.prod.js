@@ -5,7 +5,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: "production",
-  entry: "./src/JS/index.js",
+  entry: {
+    main: "./src/JS/index.js",
+    lightbox: "./src/JS/lightbox-plus-jquery.js",
+  },
   output: {
     filename: "bundle.[contentHash].js",
     path: path.resolve(__dirname, "dist"),

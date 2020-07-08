@@ -3,9 +3,12 @@ let HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/JS/index.js",
+  entry: {
+    main: "./src/JS/index.js",
+    lightbox: "./src/JS/lightbox-plus-jquery.js",
+  },
   output: {
-    filename: "bundle.js",
+    filename: "bundle.[name].js",
     path: path.resolve(__dirname, "dist"),
   },
   module: {
