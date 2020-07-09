@@ -10,8 +10,23 @@ html {
 }
 
 body {
-  background-image: url("../assets/images/background/wool.png");
+  background-image: url("../assets/images/background/otis-redding.png");
+  background-color: #000505;
   width: 100%;
+  overflow-y: scroll;
+
+  #fullpage {
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(300px);
+    scroll-snap-type: y mandatory;
+
+    display: flex;
+    height: 100%;
+    scroll-padding-top: 40px;
+    scroll-margin: 0 50% 0 -50%;
+    flex-direction: column;
+    white-space: nowrap;
+  }
 }
 
 #frontpage {
@@ -25,7 +40,7 @@ body {
     display: block;
     border: 5px $logoColor solid;
     border-radius: 50%;
-    background-color: black;
+    background-color: $logoBGColor;
     width: 300px;
     height: 300px;
     margin: 0;
@@ -95,6 +110,8 @@ body {
   height: auto;
   width: 100%;
   min-height: 100vh;
+  scroll-snap-align: center;
+  position: relative;
 }
 
 #menu {

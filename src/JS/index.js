@@ -42,7 +42,3 @@ new Map({
     zoom: 17,
   }),
 });
-
-var attribution = new ol.control.Attribution({
-  collapsible: false,
-});
