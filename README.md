@@ -4,7 +4,7 @@ Simple webpage for asian restaurant.
 
 ## Getting Started
 
-You just need to open the link with your browser: [Link](https://alexredwood.github.io/restaurant_youandme_/).
+You just need to open the link with your browser: [Link](https://alexredwood.github.io/restaurant_youandme/).
 
 ### Prerequisites
 
