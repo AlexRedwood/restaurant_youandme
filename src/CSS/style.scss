@@ -227,3 +227,26 @@ a:active {
     padding-bottom: 20px;
   }
 }
+
+#goup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 40px;
+  right: 50px; 
+  z-index: 99; 
+  border: 2px white solid;
+  background-color: transparent; 
+  color: white; 
+  cursor: pointer;
+  padding: 15px; 
+  border-radius: 5px; 
+  font-size: 18px; 
+  transition: 0.4s;
+
+  &:hover {
+     border-radius: 0;
+     text-decoration: none;
+      border: 2px $logoColor solid;
+      color: $logoColor;
+  }
+}
