@@ -25,7 +25,23 @@ module.exports = {
       },
       {
         test: /\.html$/i,
-        use: ["html-loader"],
+        loader: "html-loader",
+        options: {
+          attributes: {
+            list: [
+              {
+                tag: "a",
+                attribute: "href",
+                type: "src",
+              },
+              {
+                tag: "img",
+                attribute: "src",
+                type: "src",
+              },
+            ],
+          },
+        },
       },
       {
         test: /\.(svg|png|jpg|jpeg|gif)$/i,
@@ -34,6 +50,11 @@ module.exports = {
           options: {
             name: "[name].[hash].[ext]",
             outputPath: "imgs",
+            attributes: {
+              tag: "a",
+              attribute: "href",
+              type: "src",
+            },
           },
         },
       },
