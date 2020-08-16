@@ -5,24 +5,32 @@
     <meta charset="UTF-8" />
     <meta name="description" content="Asian food restaurant. Come and try!" />
     <meta name="author" content="Alexandr Rudenko" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 ,
+      maximum-scale=1.0, user-scalable=no"
+    />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap"
       rel="stylesheet"
     />
-     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
       integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
       crossorigin=""
     />
-
+  </head>
   <body>
     <div id="fullpage">
       <div id="frontpage" class="section">
-        <div id="logo">
-          <p id="you">You</p>
-          <p id="and">&</p>
-          <p id="me">Me</p>
+        <div id="logo-wrapper">
+          <div id="logo">
+            <p id="you">You</p>
+            <p id="and">&</p>
+            <p id="me">Me</p>
+          </div>
         </div>
         <nav id="navlinks">
           <a href="#menu">Menu</a>
@@ -35,7 +43,7 @@
         <p class="titles">
           Menu
         </p>
-        <div id="menu-photos">
+        <div class="menu-photos">
           <a
             href="../src/assets/images/menu/menu1.jpg"
             data-lightbox="menu-photos"
@@ -84,6 +92,8 @@
               alt="Menu fourth page"
             />
           </a>
+        </div>
+        <div class="menu-photos">
           <a
             href="../src/assets/images/menu/menu5.jpg"
             data-lightbox="menu-photos"
@@ -139,7 +149,8 @@
           Rezervace
         </p>
         <p class="texts">
-          Rezervujte si stůl nebo jídlo s sebou telefonicky na +420 773 275 776
+          <span>Rezervujte si stůl nebo jídlo s sebou</span>
+          <span>telefonicky na +420 773 275 776</span>
         </p>
 
         <div class="swiper-container">
@@ -227,6 +238,6 @@
     <button id="goup" title="Go to top">
       <ion-icon name="arrow-up-outline" size="large"></ion-icon>
     </button>
-  <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
   </body>
 </html>

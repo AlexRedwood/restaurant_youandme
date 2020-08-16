@@ -6,6 +6,7 @@
 
 html {
   width: 100%;
+  max-width: 100%;
   scroll-behavior: smooth;
 }
 
@@ -13,7 +14,9 @@ body {
   background-image: url("../assets/images/background/otis-redding.png");
   background-color: #000505;
   width: 100%;
+  max-width: 100%;
   overflow-y: scroll;
+  overflow-x: hidden;
 
   #fullpage {
     scroll-snap-type: mandatory;
@@ -30,51 +33,110 @@ body {
 }
 
 #frontpage {
+  display: flex;
   font-family: "Parisienne", cursive;
   color: $logoColor;
-  min-height: 400px;
+  min-height: 500px;
   height: 100vh;
   position: relative;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-between;
+
+  #logo-wrapper {
+    display: block;
+  }
 
   #logo {
     display: block;
     border: 5px $logoColor solid;
     border-radius: 50%;
     background-color: $logoBGColor;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     margin: 0;
     position: absolute;
-    top: 35%;
+    top: 25%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+
+    @media only screen and (min-width: $iphonePortrait) {
+      top: 35%;
+    }
+
+    @media only screen and (min-width: $androidTablets) {
+      width: 300px;
+      height: 300px;
+    }
   }
 
   #navlinks {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     width: 45%;
-    min-width: 470px;
+    min-width: 80%;
     position: absolute;
     top: 75%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 
-    a {
-      color: white;
-      font-size: 1.6em;
-      display: block;
+    @media only screen and (min-width: $iphoneLandscape) {
+      min-width: 280px;
+    }
 
+    @media only screen and (min-width: $iphonePortrait) {
+      min-width: 420px;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    @media only screen and (min-width: $androidTablets) {
+      min-width: 470px;
+    }
+
+    @media only screen and (min-width: $iPadLandscape) {
+      min-width: 600px;
+    }
+
+    a {
+      display: block;
+      color: white;
+      font-size: 1.1em;
+      display: block;
       font-family: "Georgia", cursive;
       letter-spacing: 1px;
       border: 2px white solid;
-      padding: 20px;
+      padding: 20px 10px;
       transition: 0.4s;
-      margin: auto;
+
       border-radius: 5px;
+      margin: 5px 0px;
+      text-align: center;
+
+      @media only screen and (min-width: $iphoneLandscape) {
+        font-size: 1.1em;
+        padding: 20px 10px;
+      }
+
+      @media only screen and (min-width: $iphonePortrait) {
+        font-size: 1.4em;
+        padding: 18px;
+        margin: 0px;
+      }
+
+      @media only screen and (min-width: $androidTablets) {
+        font-size: 1.6em;
+        padding: 20px;
+        margin: auto;
+      }
+
+      @media only screen and (min-width: $iPadLandscape) {
+        margin: 0px 20px;
+      }
     }
     a:hover {
       border-radius: 0;
@@ -90,24 +152,40 @@ body {
   }
 
   #you {
-    left: 63px;
-    top: 26px;
-    font-size: 6em;
+    left: 53px;
+    top: 24px;
+    font-size: 5em;
+
+    @media only screen and (min-width: $androidTablets) {
+      left: 55px;
+      top: 26px;
+      font-size: 6em;
+    }
   }
   #and {
-    left: 121px;
-    top: 8px;
-    font-size: 5em;
+    left: 102px;
+    top: 9px;
+    font-size: 4em;
+
+    @media only screen and (min-width: $androidTablets) {
+      left: 121px;
+      top: 8px;
+      font-size: 5em;
+    }
   }
   #me {
-    left: 75px;
+    left: 63px;
+    top: 3px;
+    font-size: 5em;
 
-    font-size: 6em;
+    @media only screen and (min-width: $androidTablets) {
+      left: 75px;
+      font-size: 6em;
+    }
   }
 }
 
 .section {
-  height: auto;
   width: 100%;
   min-height: 100vh;
   scroll-snap-align: center;
@@ -115,27 +193,61 @@ body {
 }
 
 #menu {
+  position: relative;
   margin: auto;
-  display: flex;
-  flex-direction: column;
+  display: block;
   max-width: 100%;
 
-  #menu-photos {
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 40px;
-    max-width: 60%;
+  .titles {
+    margin: 20px 0px;
+
+    @media only screen and (min-height: 700px) {
+      margin: 50px 0px;
+    }
+  }
+  a:hover {
+    text-decoration: none;
+  }
+
+  .menu-photos {
+    display: block;
+    text-align: center;
   }
 
   .menus {
     max-height: 30vh;
+    max-width: 50px;
     width: auto;
     height: auto;
-    margin: 20px;
+    margin: 50px 10px;
     filter: grayscale(100%);
     transition: 0.5s;
+
+    @media only screen and (min-width: $iphonePortrait) {
+      max-width: 70px;
+      margin: 40px 10px;
+    }
+
+    @media only screen and (min-width: 550px) {
+      max-width: 100px;
+    }
+
+    @media only screen and (min-width: 700px) {
+      max-width: 150px;
+    }
+
+    @media only screen and (min-width: 900px) {
+      max-width: 170px;
+    }
+
+    @media only screen and (min-width: $iPadLandscape) {
+      width: auto;
+      margin: 20px;
+    }
+
+    @media only screen and (min-width: $desktop) {
+      margin: 40px;
+    }
 
     &:hover {
       filter: grayscale(0);
@@ -145,13 +257,17 @@ body {
 
 .titles {
   display: block;
-  font-size: 4em;
   margin: auto;
   color: $logoColor;
   font-family: "Parisienne", cursive;
   text-align: center;
   max-width: 100%;
   padding-top: 20px;
+
+  font-size: 3em;
+  @media only screen and (min-width: $iphonePortrait) {
+    font-size: 4em;
+  }
 }
 
 .texts {
@@ -186,67 +302,192 @@ a:active {
   text-align: center;
 
   .texts {
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin: 40px 0px;
+    font-size: 1.1em;
+    word-wrap: break-word;
+
+    span {
+      display: block;
+      margin: 10px 0;
+    }
+
+    @media only screen and (min-width: 390px) {
+      font-size: 1.3em;
+    }
+
+    @media only screen and (min-width: 640px) {
+      font-size: 1.2em;
+    }
+
+    span {
+      @media only screen and (min-width: 640px) {
+        display: inline;
+      }
+    }
+
+    @media only screen and (min-width: 780px) {
+      font-size: 1.5em;
+    }
+
+    @media only screen and (min-width: 900px) {
+      font-size: 1.6em;
+    }
+
+    @media only screen and (min-width: $iPadLandscape) {
+      font-size: 1.7em;
+    }
+
+    @media only screen and (min-width: 1650px) {
+      font-size: 1.8em;
+    }
   }
 
   .swiper-container {
-    width: 70vw;
-    min-width: 420px;
-    height: 50vh;
+    width: 290px;
+    height: auto;
+
+    @media only screen and (min-width: 390px) {
+      width: 380px;
+    }
+
+    @media only screen and (min-width: $iphonePortrait) {
+      width: 465px;
+    }
+
+    @media only screen and (min-width: 640px) {
+      width: 620px;
+    }
+
+    @media only screen and (min-width: 780px) {
+      width: 750px;
+      height: auto;
+    }
+
+    @media only screen and (min-width: 900px) {
+      width: 880px;
+      height: auto;
+    }
+
+    @media only screen and (min-width: $iPadLandscape) {
+      width: 980px;
+    }
+
+    @media only screen and (min-width: 1650px) {
+      width: 60vw;
+    }
 
     .swiper-pagination {
       color: $textcolor;
-      font-size: 1.3em;
+      font-size: 1.1em;
       font-family: "Georgia", cursive;
+
+      @media only screen and (min-width: 390px) {
+        font-size: 1.3em;
+      }
     }
     .swiper-button-prev,
     .swiper-button-next {
-      color: $textcolor;
+      color: rgb(32, 4, 30);
+
+      @media only screen and (min-width: 390px) {
+        color: $textcolor;
+      }
     }
   }
 
   .food {
-    width: 60vw;
-    min-width: 400px;
-    max-height: 400px;
+    width: 280px;
+    height: auto;
+
+    @media only screen and (min-width: 390px) {
+      width: 280px;
+    }
+
+    @media only screen and (min-width: $iphonePortrait) {
+      width: 350px;
+    }
+
+    @media only screen and (min-width: 640px) {
+      width: 500px;
+    }
+
+    @media only screen and (min-width: 780px) {
+      width: 600px;
+    }
+
+    @media only screen and (min-width: 900px) {
+      width: 720px;
+    }
+
+    @media only screen and (min-width: $iPadLandscape) {
+      width: 820px;
+    }
+
+    @media only screen and (min-width: 1650px) {
+      width: auto;
+      height: 75vh;
+    }
   }
 }
 
 #contacts {
+  .titles {
+    padding-top: 40px;
+    font-size: 2.5em;
+    @media only screen and (min-width: 360px) {
+      font-size: 3em;
+    }
+  }
+
   #info-container {
-    margin-top: 40px;
+    margin-top: 20px;
+    font-size: 0.8em;
+
+    @media only screen and (min-width: 360px) {
+      font-size: 1.1em;
+    }
+
+    @media only screen and (min-width: $iphonePortrait) {
+      font-size: 1.2em;
+    }
   }
 
   .map {
     height: 400px;
-    width: 100%;
-    max-width: 1000px;
     margin: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+
+    max-width: 1500px;
   }
 }
 
 #goup {
   display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
-  bottom: 40px;
-  right: 50px; 
-  z-index: 99; 
+  bottom: 22px;
+  right: 20px;
+  z-index: 99;
   border: 2px white solid;
-  background-color: transparent; 
-  color: white; 
+  background-color: transparent;
+  color: white;
   cursor: pointer;
-  padding: 15px; 
-  border-radius: 5px; 
-  font-size: 18px; 
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 10px;
   transition: 0.4s;
+  text-decoration: none;
+
+  @media only screen and (min-width: $androidTablets) {
+    bottom: 40px;
+    right: 50px;
+    padding: 20px;
+    font-size: 18px;
+  }
 
   &:hover {
-     border-radius: 0;
-     text-decoration: none;
-      border: 2px $logoColor solid;
-      color: $logoColor;
+    text-decoration: none;
+    border: 2px $logoColor solid;
+    color: $logoColor;
   }
 }
