@@ -9,3 +9,14 @@ $androidTablets: 600px;
 $iPad: 768px;
 $iPadLandscape: 1024px;
 $desktop: 1320px;
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: rgb(90, 30, 255);
+  background: white;
+}
+
+::selection {
+  color: rgb(90, 30, 255);
+  background: white;
+}
